@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;600&display=swap');
+
+/* Global */
+:root {
+    --dark-colour: #333;
+    --light-colour: #ddd;
+    --brand-colour-light: #fffded;    
+    --brand-colour-mid: #f9eec6;
+    --brand-colour-dark: #e8d17d;
+    --brand-colour-black: #685911;
+    --brand-colour-transparent: #ffffff90;
+    --font-ratio: 1;
+    --main-heading: calc(2.5rem * var(--font-ratio));
+    --sub-heading: calc(1.5rem * var(--font-ratio));
+    --product-heading: calc(1.25 * var(--font-ratio));
+    --body-text: calc(1rem * var(--font-ratio));
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    background-color: var(--brand-colour-light);
+}
+body {
+    font-family: 'Playpen Sans', cursive;
+}
+.wrapper {
+    max-width: 64rem;
+    margin: 2rem auto;
+    box-shadow: 0 0 1rem var(--brand-colour-black);
+}
+h1, h2, h3, p {
+    color: var(--dark-colour);
+}
+img {
+    margin: auto;
+    display: flex;
+    width: 90%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    background-color: var(--brand-colour-mid);
+}
+nav {
+    padding: 1rem;
+    text-align: right;
+}
+#menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#menu a {
+    text-decoration: none;
+    color: var(--dark-colour);
+    padding: 1.25rem 0;
+}
+#menu-toggle {
+    font-size: var(--sub-heading);
+    display: none;
+    background-color: var(--brand-colour-mid);
+    color: var(--dark-colour);
+    border: none;
+}
+#menu.active {
+    display: flex;
+}
+
+/* Hero */
+.hero {
+    min-height: 25rem;
+    background-image: radial-gradient(circle, var(--brand-colour-transparent) 40%, var(--brand-colour-mid) 100%), url(../img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hero-main, .hero-sub {
+    background-color: var(--brand-colour-transparent);
+    padding: 0.5rem;
+    color: var(--brand-colour-black);
+    text-align: center;
+}
+.hero-main {
+    font-size: var(--main-heading);
+}
+.hero-sub {
+    font-size: var(--sub-heading);
+}
+
+/* Section */
+section {
+    max-width: 65rem;
+    margin: 1rem;
+}
+
+/* Products */
+.products h2 {
+    margin-top: 2rem;
+    text-align: center;
+    color: var(--brand-colour-black);
+    font-size: var(--sub-heading);
+}
+.products-gallery {
+    display: flex;
+    flex-direction: row;
+}
+.products-gallery-item {
+    margin: 1rem;
+    padding: 1rem;
+    height: 26rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: .3s all ease-in-out;
+}
+.products-gallery-item img {
+    margin: 1rem;
+}
+.products-gallery-item h3 {
+    max-width: 19ch;
+    text-align: center;
+    padding-bottom: 1rem;
+    font-size: var(--product-heading);
+}
+
+/* View Product Button */
+.button {
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    background-color: var(--brand-colour-dark);
+    border: none;
+    border-radius: 0.5rem;
+    text-align: center;
+    display: flex;
+    transition: .3s all ease-in-out;
+}
+.button:hover {
+    background-color: var(--brand-colour-mid);
+}
+
+/* Gallery */
+.gallery h2 {
+    margin: 1rem;
+    text-align: center;
+    color: var(--brand-colour-black);
+    font-size: var(--sub-heading);
+}
+.gallery-images {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+.gallery-images img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    border: solid 0.5rem var(--brand-colour-dark);
+    border-radius: 2rem;
+    transition: .3s all ease-in-out;
+}
+.gallery-images img:hover {
+    border: solid 0.5rem var(--brand-colour-mid);
+}
+
+/* Footer */
+footer {
+    background-color: var(--brand-colour-mid);
+
+}
+footer ul {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+footer p {
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+/* Links */
+li {
+    list-style: none;
+    margin: 1rem;
+    max-width: 5rem;
+    max-height: 5rem;
+}
+li a:link {
+    color: var(--dark-colour);
+    background-color: transparent;
+    text-decoration: none;
+}
+li a:visited {
+    color: var(--brand-colour-black);
+}
+li a:hover {
+    text-shadow: 0rem 0rem 1rem var(--brand-colour-black);
+}
+li a:active {
+    color: var(--brand-colour-black);
+}
+
+/* Media Queries */
+
+/* media query for laptop - less than 1024px/64rem */
+@media screen and (max-width:64em) {
+    .wrapper {
+        margin: 0 auto;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
+
+/* media query for tablet - less than 768px/48rem */
+@media screen and (max-width:48em) {
+    :root {
+        --font-ratio: 0.9;
+    }
+    .hero {
+        min-height: 20rem;
+    }
+    .products h2 {
+        margin-bottom: 2rem;
+    }
+    .products-gallery-item {
+        padding: 0rem;
+        height: 23rem;
+    }
+    footer ul {
+        gap: 1.25rem;
+    }
+    .gallery-images {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+    .gallery-images img {
+        height: 16rem;
+    }
+}
+
+/* media query for mobile - less than 480px/30rem */
+@media screen and (max-width: 30em) {
+    :root {
+        --font-ratio: 0.65;
+    }
+    #menu-toggle {
+        display: inline;
+    }
+    #menu {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        right: 1rem;
+        background-color: var(--brand-colour-mid);
+        border-radius: 0.5rem;
+        box-shadow: 0 0 .3125rem var(--brand-colour-black);;
+        padding: 1.75rem;
+    }
+    .hero {
+        min-height: 15rem;
+    }
+    .products h2 {
+        font-size: var(--main-heading);
+    }
+    .products-gallery {
+        flex-direction: column;
+    }
+    .products-gallery-item h3 {
+        max-width: 35ch;
+    }
+    .gallery h2 {
+        font-size: var(--main-heading);
+    }
+    .gallery-images {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+    }
+    .gallery-images img {
+        height: 16rem;
+    }
+    footer ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
